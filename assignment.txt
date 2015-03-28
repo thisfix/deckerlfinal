@@ -1,0 +1,56 @@
+FInal Project - Library
+
+FInal Project - Library
+
+The Library project is about your normal library and handling checking in/out library items. A LibraryItem based on UML 
+diagram consists of books, music and videos though not restricted to them. A LibraryItem will provide all the functionality 
+required to manage items in a library. But concrete types have unique properties like running time, pages, audio format, 
+video format, genera, etc. You can use Code from Assignments 3 and 4.
+Some startup code is located under the project link on main page.
+
+Implementation Requirements
+
+Complete all appropriate code in Genre enums adding attribute, constructor and get method to retrieve in appropriate case. 
+Example Binding.
+List of files that are enum: MovieGenre, MediaType, MusicGenre, Binding
+Video, Music, and Book all extend from AbstractLibraryItem where AbstractLibraryItem handles everything with exception of 
+concrete classes specific behavior.
+A Patron is what you would think, a person that is registered with the Library and can checkin & out LibraryItem's.
+AbstractLibraryItem implements LibraryItem interface and provides max implementation possible.
+Library class is the main piece of code.
+Contains a list of items, hashmap of patrons where key is their library number. and a map of checkedoutitems where the key is 
+the patron's number.
+constructor allows creating a Library with a branch name.
+add method allows adding library items such as Videos, Music, and Books to the library stock.
+remove method removes the library item contained in the library stock. If it cannot remove item then it throws a LibraryException 
+on why and contains the LibraryItem that failed.
+addPatron adds a new patron to the library, it is stored in a Map where the key is the library number that is generated and 
+associated to the Patron object. If there is a duplicate name it throws a PatronException that contains the patron object that 
+is defined in library as well as the name that is being tried to add.
+removePatron method removes the patron based on the library number. It returns true if successful and false if not, meaning 
+that it was not found.
+checkout method checks out a library item based on the patron's card number. If fails, then throws an CheckInOutException and 
+contains the library item and card number along with the reason for failing like item does not exits or patron does not exist.
+isCheckout method does what you would think, it validates whether it is checked out or not. If the the item does not exist throw 
+CheckInOutException with the library item and why failed.
+checkin method resets the library item so accessible to others to check out. If errors like item does not exist or item is not 
+checkout, throw an CheckInOutException with the item and reason for error.
+getLibraryMembers - returns a list of all patrons registered with the library.
+getCheckedOutItems - returns a list of all items checked based on patron's library number.
+getListOfAllLibraryItems - returns a list of all library items registered with the library.
+Write a junit v4 test class that validates all the methods defined in Library and as a minimum validate that all conditions 
+described for the method works.
+See UML diagram below assignment on main page. Place all code in the following packages:
+
+edu.washington.ext.libraryproject.controler
+Library, PatronException, CheckInOutException
+edu.washington.ext.libraryproject.model
+Book, Music, Patron, Video
+enums Binding, MediaType, MovieGenre, and MusicGenre
+edu.washington.ext.libraryproject.common
+AbstractLibraryItem and LibraryItem
+What to turn in
+
+
+Submit as zip file below as defined and see below to submit
+
